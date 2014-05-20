@@ -1,7 +1,7 @@
 var rem = require('rem');
 
 var client = new rem.Client();
-client.debug = true;
+// client.debug = true;
 
 function getAPIKey (username, password, next)
 {
@@ -12,7 +12,6 @@ function getAPIKey (username, password, next)
     if (err) {
       return next(err);
     }
-    console.log(json);
     if (!json || json.STATUS != 'SUCCESS') {
       return next(new Error(json && json.DETAILS));
     }
@@ -21,7 +20,7 @@ function getAPIKey (username, password, next)
 }
 
 function getInventory (apikey, next) {
-  client.json('https://reports.rushorder.com/json/index.cfm/', apikey, '/oti/inventory/').get(next)
+  client.json('https://reports.rushorder.com/json/index.cfm/', apikey, '/tec/inventory/').get(next)
 }
 
 exports.getAPIKey = getAPIKey;
