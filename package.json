@@ -1,0 +1,15 @@
+{
+  "name": "rushorder",
+  "version": "0.0.1",
+  "repository": "tcr/rushorder",
+  "description": "A basic interface for interacting with rushorder.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tim Cameron Ryan <tim@technical.io>",
+  "license": "MIT",
+  "dependencies": {
+    "rem": "~0.7.0-2"
+  }
+}
