@@ -16,12 +16,19 @@ function getAPIKey (username, password, next)
       return next(new Error(json && json.DETAILS));
     }
     return next(null, json.APIKEY);
-  })
+  });
 }
 
-function getInventory (apikey, next) {
-  client.json('https://reports.rushorder.com/json/index.cfm/', apikey, '/tec/inventory/').get(next)
+// Gets all inventory
+function getInventory (apikey, customerCode, next) {
+  client.json('https://reports.rushorder.com/json/index.cfm/', apikey, '/', customerCode, '/inventory/').get(next);
+}
+
+// Gets shipped orders
+function getOrderByNumber (apikey, customerCode, orderNumber, next) {
+  client.json('https://reports.rushorder.com/json/index.cfm/', apikey, '/', customerCode, '/orders/', orderNumber).get(next);
 }
 
 exports.getAPIKey = getAPIKey;
 exports.getInventory = getInventory;
+exports.getOrderByNumber = getOrderByNumber;

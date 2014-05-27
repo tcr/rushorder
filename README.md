@@ -17,6 +17,15 @@ ro.getAPIKey('username', 'password', function (err, key) {
   });
 });
 ```
+```
+var ro = require('rushorder');
+ro.getAPIKey('username', 'password', function (err, key) {
+  console.log(key);
+  ro.getOrderByNumber(key, customerCode, orderNumber, function (err, data) {
+    console.log(data);
+  });
+});
+```
 
 ## license
 
