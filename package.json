@@ -1,6 +1,6 @@
 {
   "name": "rushorder",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "repository": "tcr/rushorder",
   "description": "A basic interface for interacting with rushorder.com",
   "main": "index.js",

@@ -30,4 +30,4 @@ function getAnOrder (apikey, number, next) {
 
 exports.getAPIKey = getAPIKey;
 exports.getInventory = getInventory;
-exports.getOrders = getAnOrder;
+exports.getAnOrder = getAnOrder;
