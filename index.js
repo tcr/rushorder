@@ -24,10 +24,10 @@ function getInventory (apikey, next) {
   client.json('https://reports.rushorder.com/json/index.cfm/', apikey, '/tec/inventory/').get(next)
 }
 
-function getOrders (apikey, next) {
-  client.json('https://reports.rushorder.com/json/index.cfm/', apikey, '/tec/orders/').get(next)
+function getAnOrder (apikey, number, next) {
+  client.json('https://reports.rushorder.com/json/index.cfm/', apikey, '/tec/orders/', number).get(next)
 }
 
 exports.getAPIKey = getAPIKey;
 exports.getInventory = getInventory;
-exports.getOrders = getOrders;
+exports.getOrders = getAnOrder;
