@@ -24,7 +24,7 @@ function getInventory (apikey, next) {
   client.json('https://reports.rushorder.com/json/index.cfm/', apikey, '/tec/inventory/').get(next)
 }
 
-function getOrders () {
+function getOrders (apikey, next) {
   client.json('https://reports.rushorder.com/json/index.cfm/', apikey, '/tec/orders/').get(next)
 }
 
