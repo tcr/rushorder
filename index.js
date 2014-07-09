@@ -15,6 +15,7 @@ function getAPIKey (username, password, next)
     if (!json || json.STATUS != 'SUCCESS') {
       return next(new Error(json && json.DETAILS));
     }
+    console.log('this be', json.APIKEY);
     return next(null, json.APIKEY);
   })
 }
@@ -23,5 +24,10 @@ function getInventory (apikey, next) {
   client.json('https://reports.rushorder.com/json/index.cfm/', apikey, '/tec/inventory/').get(next)
 }
 
+function getOrders () {
+  client.json('https://reports.rushorder.com/json/index.cfm/', apikey, '/tec/orders/').get(next)
+}
+
 exports.getAPIKey = getAPIKey;
 exports.getInventory = getInventory;
+exports.getOrders = getOrders;
